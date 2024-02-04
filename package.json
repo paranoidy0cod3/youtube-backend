@@ -1,0 +1,20 @@
+{
+  "name": "youtube-backend",
+  "version": "1.0.0",
+  "description": "a complete youtube backend for learning backend.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "backend",
+    "mern",
+    "youtube"
+  ],
+  "author": "paranoidy0cod3",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^3.0.3",
+    "prettier": "^3.2.5"
+  }
+}
