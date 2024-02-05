@@ -2,9 +2,10 @@
   "name": "youtube-backend",
   "version": "1.0.0",
   "description": "a complete youtube backend for learning backend.",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon -r dotenv/config --experimental-json-modules src/index.js"
   },
   "keywords": [
     "backend",
@@ -16,5 +17,10 @@
   "devDependencies": {
     "nodemon": "^3.0.3",
     "prettier": "^3.2.5"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.1",
+    "express": "^4.18.2",
+    "mongoose": "^8.1.1"
   }
 }
