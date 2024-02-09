@@ -48,7 +48,7 @@ const userSchema = new Schema(
 )
 // password hashing and compare
 userSchema.pre("save", async function(next){
-    if(!this.modified("password")) return next()
+    if(!this.isModified("password")) return next()
     this.password = await bcrypt.hash(this.password, 10)
     next()
 })
