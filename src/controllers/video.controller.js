@@ -77,36 +77,7 @@ const getVideoById = asyncHandler(async (req, res) => {
   console.log(videoId);
   if (!videoId) throw new ApiError(400, "videoId is required!");
 
-  const video = await Video.aggregate([
-    { $match: { _id: videoId } },
-    {
-      $lookup: {
-        from: "users",
-        localField: "owner",
-        foreignField: "_id",
-        as: "owner",
-      },
-    },
-    { $unwind: "$owner" },
-    {
-      $addFields: {
-        owner: {
-          $cond: {
-            if: { $eq: ["$$ROOT._id", "$$owner.watchedVideos._id"] },
-            then: { $set: { watchedVideos: "$owner.watchedVideos" } }, // No change
-            else: {
-              $set: {
-                watchedVideos: {
-                  $concatArrays: ["$owner.watchedVideos", ["$$ROOT._id"]],
-                },
-              },
-            }, // Push video ID
-          },
-        },
-      },
-    },
-    { $set: { views: { $sum: { $add: ["$views", 1] } } } },
-  ]);
+  const video = await Video.aggregate([{ $match: { _id: videoId } }]);
 
   if (!video) throw new ApiError(404, "requested video doesn't exists.");
   res
