@@ -1,10 +1,11 @@
 {
   "name": "youtube-backend",
   "version": "1.0.0",
-  "description": "a complete youtube backend for learning backend.",
+  "description": "a complete youtube backend using node.",
   "type": "module",
   "main": "index.js",
   "scripts": {
+    "start":"src/index.js",
     "dev": "nodemon -r dotenv/config --experimental-json-modules src/index.js"
   },
   "keywords": [
@@ -19,15 +20,17 @@
     "prettier": "^3.2.5"
   },
   "dependencies": {
-    "bcrypt": "^5.1.1",
-    "cloudinary": "^2.0.0",
+    "bcryptjs": "^2.4.3",
+    "cloudinary": "^1.41.0",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
-    "dotenv": "^16.4.1",
+    "dotenv": "^16.3.1",
     "express": "^4.18.2",
+    "express-rate-limit": "^7.3.1",
     "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.1.1",
-    "mongoose-aggregate-paginate-v2": "^1.0.7",
-    "multer": "^1.4.5-lts.1"
+    "mongoose": "^8.0.0",
+    "mongoose-aggregate-paginate-v2": "^1.0.6",
+    "multer": "^1.4.5-lts.1",
+    "node-gyp": "^10.0.1"
   }
 }
