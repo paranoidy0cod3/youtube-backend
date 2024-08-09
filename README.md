@@ -27,3 +27,7 @@ This project is a comprehensive implementation of a video sharing platform utili
 - Video Optimization: Video encoding and delivery optimization for smooth playback.
 
 #### By combining these elements, the project delivers a scalable and engaging video sharing platform.
+
+# Demo
+
+[Visit the demo to witness videoTube in action! click here](https://youtube-frontend-ruby.vercel.app/)
